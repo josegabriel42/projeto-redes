@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redes-projeto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redes-projeto
+  template:
+    metadata:
+      labels:
+        app: redes-projeto
+    spec:
+      containers:
+      - name: redes-projeto
+        image: redes-projeto:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080 # Altere conforme necessário
